@@ -21,7 +21,6 @@ void draw() {
   strokeWeight(0);
   fill(0, 255, 150);
   rect(0, 370, 1000, 50);
-  strokeWeight(15);
   fill(0);
   text("The total sum of the dice is " + sum, 200, 400);
 }
