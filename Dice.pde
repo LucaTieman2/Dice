@@ -12,8 +12,8 @@ void setup() {
 void draw() {
   for (int x = 50; x < 500; x+=60) {
     for (int j = 50; j < 400; j+= 60) {
-     bob.roll();
      bob.show();
+     bob.roll();
      bob = new Die(x-38, j-38);
      //jim.show();
     }
@@ -37,12 +37,12 @@ class Die //models one single dice cube
    {
      myX = x;
      myY= y;
-     number = (int)random(1,7); 
+     number = (int)(Math.random()*6)+1;
           //variable initializations here
    }
      void roll()
      {
-        number = (int)random(1,7);
+        number = (int)(Math.random()*6)+1;
         if(number == 1) {
           fill(237, 228, 206);
           ellipse(myX+25, myY+25, 10, 10);
