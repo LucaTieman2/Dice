@@ -12,8 +12,8 @@ void setup() {
 void draw() {
   for (int x = 50; x < 500; x+=60) {
     for (int j = 50; j < 400; j+= 60) {
-     bob.show();
      bob.roll();
+     bob.show();
      bob = new Die(x-38, j-38);
      //jim.show();
     }
