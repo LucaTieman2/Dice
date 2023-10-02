@@ -6,16 +6,14 @@ void setup() {
   background(0, 255, 150);
   fill(0, 255, 150);
   bob = new Die(433, 313);
-  jim = new Coin(150, 150);
   sum = 0;
 }
 void draw() {
   for (int x = 50; x < 500; x+=60) {
     for (int j = 50; j < 400; j+= 60) {
-     bob.show();
-     bob.roll();
-     bob = new Die(x-38, j-38);
-     //jim.show();
+      bob.show();
+      bob.roll();
+      bob = new Die(x-38, j-38);
     }
   }
   strokeWeight(0);
@@ -28,16 +26,14 @@ void mousePressed() {
   redraw();
   sum = 0;
 }
-class Die //models one single dice cube
+class Die 
 {
-   //member variable declarations here
    int myX, myY, number;
-   Die(int x, int y) //constructor
+   Die(int x, int y) 
    {
      myX = x;
      myY= y;
-     number = (int)(Math.random()*6)+1;
-          //variable initializations here
+     number = (int)(Math.random()*6)+1; 
    }
      void roll()
      {
@@ -90,38 +86,5 @@ class Die //models one single dice cube
        rect(myX, myY, 50, 50); 
      }
 }
-class Coin {
-  boolean heads;
-  int myX, myY;
-  
-  Coin(int x, int y){
-    myX = x;
-    myY = y;
-    flip();
-  }
-  void flip () {
-    if(Math.random() < .5)
-    {
-       heads = true;
-    }
-    else
-    {
-       heads = false;
-    }    
-  }
-  void show () {
-    noStroke();
-    fill(255);
-    ellipse(myX, myY, 50, 50);
-    fill(0);
-    if(heads == true) {
-      text("Heads", myX-15, myY);
-    } else { 
-      text("Tails", myX-15, myY);
-    }
-  }
-}
 
-  
 Die bob;
-Coin jim;
