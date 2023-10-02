@@ -81,7 +81,7 @@ class Die
      }
      void show()
      {
-       strokeWeight(3);
+       strokeWeight(10);
        fill(255-(int)random(10, 55), (int)random(0, 255), (int)random(0, 255));
        rect(myX, myY, 50, 50); 
      }
